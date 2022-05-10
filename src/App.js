@@ -8,12 +8,12 @@ import loadTasksThunk from "./redux/thunk/thunk";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(loadTasksThunk);
+    dispatch(loadTasksThunk(dispatch));
   }, [dispatch]);
 
   return (
     <div className="App">
-      <h1> SUPER FUN RANDOM BULLSHIT TO DO </h1>
+      <h1> TO DO LIST </h1>
       <Form />
       <TasksList />
     </div>
