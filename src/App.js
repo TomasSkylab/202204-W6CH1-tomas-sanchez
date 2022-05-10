@@ -1,15 +1,14 @@
 import "./App.css";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import toDos from "./data/toDos";
-import { loadTasksActionCreator } from "./redux/features/taskSlice";
 import TasksList from "./components/TasksList/TasksList";
 import Form from "./components/Form/Form";
+import loadTasksThunk from "./redux/thunk/thunk";
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(loadTasksActionCreator(toDos));
+    dispatch(loadTasksThunk);
   }, [dispatch]);
 
   return (
